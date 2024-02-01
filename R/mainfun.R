@@ -175,32 +175,32 @@ RTIGER = function(expDesign,
 
 
     # Plotting CO number per chormosome
-    if(verbose) cat("PLotting CO number per chromosome. \n")
-    myf = file.path(outputdir, "COs-per-Chromosome.pdf")
-    plotCOs(myDat, myf)
+#    if(verbose) cat("PLotting CO number per chromosome. \n")
+#    myf = file.path(outputdir, "COs-per-Chromosome.pdf")
+#    plotCOs(myDat, myf)
 
     # Plotting CO number per Sample
-    cos = calcCOnumber(myDat)
-    cos = colSums(cos)
-    cos = melt(cos)
-    rev.newn = myDat@info$expDesign$OName
-    names(rev.newn) = myDat@info$expDesign$name
-    cos$Sample = rev.newn[rownames(cos)]
-    colnames(cos) = c( "COs", "Sample")
-    myf = file.path(outputdir, "CO-count-perSample.pdf")
-    pdf(myf)
+ #   cos = calcCOnumber(myDat)
+ #   cos = colSums(cos)
+ #   cos = melt(cos)
+ #   rev.newn = myDat@info$expDesign$OName
+ #   names(rev.newn) = myDat@info$expDesign$name
+ #   cos$Sample = rev.newn[rownames(cos)]
+  #  colnames(cos) = c( "COs", "Sample")
+  #  myf = file.path(outputdir, "CO-count-perSample.pdf")
+  #  pdf(myf)
 
-    p <- ggplot(data=cos, aes(x=Sample, y=COs)) +
-      geom_bar(stat="identity") +
-      # geom_bar() +
-      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-      ylab("Number of COs")+
-      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-            panel.background = element_blank(), axis.line = element_line(colour = "black"),
-            axis.text.y = element_text(angle = 45))+
-      coord_flip()
-    print(p)
-    dev.off()
+#    p <- ggplot(data=cos, aes(x=Sample, y=COs)) +
+#      geom_bar(stat="identity") +
+#      # geom_bar() +
+#      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+#      ylab("Number of COs")+
+#      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+#            panel.background = element_blank(), axis.line = element_line(colour = "black"),
+#            axis.text.y = element_text(angle = 45))+
+#      coord_flip()
+#    print(p)
+#    dev.off()
 
     # Create output
     if(verbose) cat("Creating bed and IGV output formats.\n")
