@@ -203,11 +203,11 @@ RTIGER = function(expDesign,
 #    dev.off()
 
     # Create output
-    if(verbose) cat("Creating bed and IGV output formats.\n")
-    for(samp in info$sample_names){
+#    if(verbose) cat("Creating bed and IGV output formats.\n")
+ #   for(samp in info$sample_names){
 
-      export2IGV(myDat, sample = samp, dir = outputdir, ratio = TRUE, newn = newn)
-    }
+ #     export2IGV(myDat, sample = samp, dir = outputdir, ratio = TRUE, newn = newn)
+#    }
 
 
     # Goodness of fit ---------------------------------------------------------
